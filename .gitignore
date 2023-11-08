@@ -19,8 +19,8 @@
 *.user
 *.suo
 
-bin/
-obj/
+/src/Awaitility/bin/
+/src/Awaitility/obj/
 .idea/
 
 # Compiled files
