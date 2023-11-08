@@ -19,7 +19,9 @@
 *.user
 *.suo
 
-.idea
+bin/
+obj/
+.idea/
 
 # Compiled files
 *.dll
@@ -29,4 +31,4 @@
 # User-specific files
 *.userprefs
 
-*.DS_Store
+.DS_Store
