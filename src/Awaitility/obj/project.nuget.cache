@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xFR3zWYpCPazteyeHRTPvTW7+vz6dZg0tR7tOBie0UEStD81qeuo+tFntn648f+aOBQ5i0cV99LMX6awfUlKig==",
+  "dgSpecHash": "txDAHF/o1PHpTtrgcKbkliLUN6aDMD89KthdMc6GuurgSuy+3zDyG6JUw4EVKpKHW60MVdOXPnk64zwCit4Vog==",
   "success": true,
-  "projectFilePath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility/Awaitility.csproj",
+  "projectFilePath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/src/Awaitility/Awaitility.csproj",
   "expectedPackageFiles": [
     "/Users/kontvytskyi.dmytro/.nuget/packages/microsoft.codecoverage/17.6.0/microsoft.codecoverage.17.6.0.nupkg.sha512",
     "/Users/kontvytskyi.dmytro/.nuget/packages/microsoft.net.test.sdk/17.6.0/microsoft.net.test.sdk.17.6.0.nupkg.sha512",

@@ -1497,8 +1497,8 @@
     },
     "Awaitility/1.0.0": {
       "type": "project",
-      "path": "../Awaitility/Awaitility.csproj",
-      "msbuildProject": "../Awaitility/Awaitility.csproj"
+      "path": "../src/Awaitility/Awaitility.csproj",
+      "msbuildProject": "../src/Awaitility/Awaitility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1536,8 +1536,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility/Awaitility.csproj": {
-              "projectPath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility/Awaitility.csproj"
+            "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/src/Awaitility/Awaitility.csproj": {
+              "projectPath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/src/Awaitility/Awaitility.csproj"
             }
           }
         }

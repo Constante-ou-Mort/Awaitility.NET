@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Awaitility.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a27eb395b283afe2af3ee5f8d2a9ebfa98c2643")]
 [assembly: System.Reflection.AssemblyProductAttribute("Awaitility.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Awaitility.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

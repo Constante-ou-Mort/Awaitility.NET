@@ -19,9 +19,14 @@
 *.user
 *.suo
 
+.idea
+
 # Compiled files
 *.dll
 *.exe
+*.pdb
 
 # User-specific files
 *.userprefs
+
+*.DS_Store

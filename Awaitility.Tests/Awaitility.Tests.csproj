@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Awaitility\Awaitility.csproj" />
+      <ProjectReference Include="..\src\Awaitility\Awaitility.csproj" />
     </ItemGroup>
 
 </Project>

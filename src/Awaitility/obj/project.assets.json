@@ -1386,11 +1386,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility/Awaitility.csproj",
+      "projectUniqueName": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/src/Awaitility/Awaitility.csproj",
       "projectName": "Awaitility",
-      "projectPath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility/Awaitility.csproj",
+      "projectPath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/src/Awaitility/Awaitility.csproj",
       "packagesPath": "/Users/kontvytskyi.dmytro/.nuget/packages/",
-      "outputPath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility/obj/",
+      "outputPath": "/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/src/Awaitility/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kontvytskyi.dmytro/.nuget/NuGet/NuGet.Config"

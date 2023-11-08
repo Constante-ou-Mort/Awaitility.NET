@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaitility", "Awaitility\Awaitility.csproj", "{C1633EA2-1CDE-4830-9C08-F87CCB0F10AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaitility", "src\Awaitility\Awaitility.csproj", "{C1633EA2-1CDE-4830-9C08-F87CCB0F10AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaitility.Tests", "Awaitility.Tests\Awaitility.Tests.csproj", "{6C909E7E-49CD-4324-AD83-FF7FBCFE3205}"
 EndProject

@@ -122,3 +122,4 @@
 /Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility.Tests/bin/Debug/net8.0/tr/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility.Tests/bin/Debug/net8.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility.Tests/bin/Debug/net8.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+/Users/kontvytskyi.dmytro/RiderProjects/Awaitility/Awaitility.Tests/obj/Debug/net8.0/Awaitility.Tests.sourcelink.json
