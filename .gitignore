@@ -21,6 +21,8 @@
 
 /src/Awaitility/bin/
 /src/Awaitility/obj/
+/Awaitility.Tests/bin/
+/Awaitility.Tests/obj/
 .idea/
 
 # Compiled files
