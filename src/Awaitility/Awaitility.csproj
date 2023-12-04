@@ -12,5 +12,8 @@
       <PackageReference Include="xunit" Version="2.6.1" />
     </ItemGroup>
 
+    <PropertyGroup>
+        <RepositoryUrl>https://github.com/Constante-ou-Mort/Awaitility.NET</RepositoryUrl>
+    </PropertyGroup>
 
 </Project>

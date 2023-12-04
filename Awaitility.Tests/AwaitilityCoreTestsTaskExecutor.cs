@@ -8,7 +8,7 @@ using static NUnit.Framework.ParallelScope;
 namespace Awaitility.Tests;
 
 [Parallelizable(All)]
-public class AwaitilityCoreTests
+public class AwaitilityCoreTestsTaskExecutor
 {
     private List<string> _listToCheckUntilSupplier;
 

@@ -6,6 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaitility.Tests", "Awaitil
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4868FB5C-FC76-489B-918F-15DF6B1BF402}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{72DC0B40-AF99-4222-AB8C-84ADD50EDB20}"
+	ProjectSection(SolutionItems) = preProject
+		on_pr_check.yaml = on_pr_check.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
