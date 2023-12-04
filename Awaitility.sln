@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4868FB5C-FC7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{72DC0B40-AF99-4222-AB8C-84ADD50EDB20}"
 	ProjectSection(SolutionItems) = preProject
-		on_pr_check.yaml = on_pr_check.yaml
+		.github\on_pr_check.yaml = .github\on_pr_check.yaml
 	EndProjectSection
 EndProject
 Global
