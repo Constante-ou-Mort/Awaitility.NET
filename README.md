@@ -1,5 +1,5 @@
 # Awaitility.NET
-Port of Awaitility from Java to NET world.
+Port of Awaitility from Java to NET world. Reference to original: https://github.com/awaitility/awaitility
 
 # Currently there are 2 implementations of wait logic:
 1. We wait the func in the task that runs on the new thread. In this case if timeout is reached, Awaitility will interrupt the execution and TimeoutException will be thrown. It's by default behaviour.
@@ -11,9 +11,15 @@ Currently examples of code usage can be found in Awaitility.Tests.
 It is recommended to use static import: using static Awaitility.Awaitility;
 
 //Examples will be added later...
+```c#
 Await()
     .AtMost(OneHundredMilliseconds)
     .PollInterval(TenSeconds)
     .Until(() => OrderService.GetOrder(order.Id).Status == OrderStatus.Ready);
+```
 
-If you want to use 1-st wait logic implementation, but you have a getter that depends on the thread, there is Until(driver, (dr) => dr.Displayed) implementation where you pass your instance as an argument.
+If you want to use 1-st wait logic implementation, but you have a getter that depends on the thread, there is 
+```c#
+Until(driver, (dr) => dr.Displayed);
+```
+implementation where you pass your instance as an argument.
