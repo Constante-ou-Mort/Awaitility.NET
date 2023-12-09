@@ -1,5 +1,5 @@
 # Awaitility.NET
-Port of Awaitility from Java to NET world.
+Port of Awaitility from Java to NET world. Reference to original: https://github.com/awaitility/awaitility
 
 # Currently there are 2 implementations of wait logic:
 1. We wait the func in the task that runs on the new thread. In this case if timeout is reached, Awaitility will interrupt the execution and TimeoutException will be thrown. It's by default behaviour.
