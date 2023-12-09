@@ -13,6 +13,10 @@
     </ItemGroup>
 
     <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <PackageId>Awaitility.NET</PackageId>
+        <Version>1.0.0</Version>
+        <PackageDescription>Port of Awaitility from Java for NET world</PackageDescription>
         <RepositoryUrl>https://github.com/Constante-ou-Mort/Awaitility.NET</RepositoryUrl>
     </PropertyGroup>
 

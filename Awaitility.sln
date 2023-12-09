@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaitility", "src\Awaitility\Awaitility.csproj", "{C1633EA2-1CDE-4830-9C08-F87CCB0F10AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaitility.Tests", "Awaitility.Tests\Awaitility.Tests.csproj", "{6C909E7E-49CD-4324-AD83-FF7FBCFE3205}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awaitility.Tests", "tests\Awaitility.Tests\Awaitility.Tests.csproj", "{6C909E7E-49CD-4324-AD83-FF7FBCFE3205}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4868FB5C-FC76-489B-918F-15DF6B1BF402}"
 EndProject
@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{72DC
 	ProjectSection(SolutionItems) = preProject
 		.github\on_pr_check.yaml = .github\on_pr_check.yaml
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{41000099-9731-47E5-84EE-7A7393C93EA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C1633EA2-1CDE-4830-9C08-F87CCB0F10AD} = {4868FB5C-FC76-489B-918F-15DF6B1BF402}
+		{6C909E7E-49CD-4324-AD83-FF7FBCFE3205} = {41000099-9731-47E5-84EE-7A7393C93EA7}
 	EndGlobalSection
 EndGlobal
