@@ -1,7 +1,19 @@
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Awaitility.ExecutorServices;
 
-public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExecutorService(conditionSettings)
+public class TaskExecutorService : BaseExecutorService
 {
+    private readonly ConditionSettings _conditionSettings;
+
+    public TaskExecutorService(ConditionSettings conditionSettings) : base(conditionSettings)
+    {
+        _conditionSettings = conditionSettings;
+    }
+
     public override void Until(Func<bool> predicate)
     {
         var cancellationTokenSource = new CancellationTokenSource();
@@ -24,7 +36,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                 {
                     try
                     {
-                        if (conditionSettings.FailFast != null && conditionSettings.FailFast())
+                        if (_conditionSettings.FailFast != null && _conditionSettings.FailFast())
                         {
                             failFastCondition = true;
                             return false;
@@ -32,7 +44,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
 
                         if (predicate())
                         {
-                            if (conditionSettings.During == TimeSpan.Zero) return true;
+                            if (_conditionSettings.During == TimeSpan.Zero) return true;
 
                             if (isFirstSuccessPredicateExecution)
                             {
@@ -40,19 +52,19 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                                 isFirstSuccessPredicateExecution = false;
                             }
 
-                            if (DateTime.Now - duringStart >= conditionSettings.During)
+                            if (DateTime.Now - duringStart >= _conditionSettings.During)
                             {
                                 duringConditionMet = true;
                                 return true;
                             }
                         }
-                        else if (conditionSettings.During != TimeSpan.Zero)
+                        else if (_conditionSettings.During != TimeSpan.Zero)
                             duringStart = DateTime.Now;
                     }
                     catch (Exception exception)
                     {
-                        if (!conditionSettings.IgnoreExceptions
-                            && !conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
+                        if (!_conditionSettings.IgnoreExceptions
+                            && !_conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
                             throw;
                     }
 
@@ -60,7 +72,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                 }
             }, cancellationToken);
 
-            if (!task.Wait(conditionSettings.AtMost, cancellationToken))
+            if (!task.Wait((int)_conditionSettings.AtMost.TotalMilliseconds, cancellationToken))
             {
                 CheckDuringMetCondition(duringConditionMet);
                 ThrowTimeoutConditionException();
@@ -98,7 +110,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                 {
                     try
                     {
-                        if (conditionSettings.FailFast != null && conditionSettings.FailFast())
+                        if (_conditionSettings.FailFast != null && _conditionSettings.FailFast())
                         {
                             failFastCondition = true;
                             return false;
@@ -106,7 +118,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
 
                         if (predicate(obj))
                         {
-                            if (conditionSettings.During == TimeSpan.Zero) return true;
+                            if (_conditionSettings.During == TimeSpan.Zero) return true;
 
                             if (isFirstSuccessPredicateExecution)
                             {
@@ -114,19 +126,19 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                                 isFirstSuccessPredicateExecution = false;
                             }
 
-                            if (DateTime.Now - duringStart >= conditionSettings.During)
+                            if (DateTime.Now - duringStart >= _conditionSettings.During)
                             {
                                 duringConditionMet = true;
                                 return true;
                             }
                         }
-                        else if (conditionSettings.During != TimeSpan.Zero)
+                        else if (_conditionSettings.During != TimeSpan.Zero)
                             duringStart = DateTime.Now;
                     }
                     catch (Exception exception)
                     {
-                        if (!conditionSettings.IgnoreExceptions
-                            && !conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
+                        if (!_conditionSettings.IgnoreExceptions
+                            && !_conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
                             throw;
                     }
 
@@ -134,7 +146,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                 }
             }, cancellationToken);
 
-            if (!task.Wait(conditionSettings.AtMost, cancellationToken))
+            if (!task.Wait((int)_conditionSettings.AtMost.TotalMilliseconds, cancellationToken))
             {
                 CheckDuringMetCondition(duringConditionMet);
                 ThrowTimeoutConditionException();
@@ -173,7 +185,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                 {
                     try
                     {
-                        if (conditionSettings.FailFast != null && conditionSettings.FailFast())
+                        if (_conditionSettings.FailFast != null && _conditionSettings.FailFast())
                         {
                             failFastCondition = true;
                             return false;
@@ -183,7 +195,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
 
                         if (predicate(value))
                         {
-                            if (conditionSettings.During == TimeSpan.Zero) return true;
+                            if (_conditionSettings.During == TimeSpan.Zero) return true;
 
                             if (isFirstSuccessPredicateExecution)
                             {
@@ -191,21 +203,21 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                                 isFirstSuccessPredicateExecution = false;
                             }
 
-                            if (DateTime.Now - duringStart >= conditionSettings.During)
+                            if (DateTime.Now - duringStart >= _conditionSettings.During)
                             {
                                 duringConditionMet = true;
                                 return true;
                             }
                         }
-                        else if (conditionSettings.During != TimeSpan.Zero)
+                        else if (_conditionSettings.During != TimeSpan.Zero)
                         {
                             duringStart = DateTime.Now;
                         }
                     }
                     catch (Exception exception)
                     {
-                        if (!conditionSettings.IgnoreExceptions
-                            && !conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
+                        if (!_conditionSettings.IgnoreExceptions
+                            && !_conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
                             throw;
                     }
 
@@ -213,7 +225,7 @@ public class TaskExecutorService(ConditionSettings conditionSettings) : BaseExec
                 }
             }, cancellationToken);
 
-            if (!task.Wait(conditionSettings.AtMost, cancellationToken))
+            if (!task.Wait((int)_conditionSettings.AtMost.TotalMilliseconds, cancellationToken))
             {
                 CheckDuringMetCondition(duringConditionMet);
                 ThrowTimeoutConditionException();

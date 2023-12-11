@@ -1,3 +1,5 @@
+using System;
+
 namespace Awaitility;
 
 public class ConditionSettings

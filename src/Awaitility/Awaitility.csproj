@@ -1,23 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <Nullable>enable</Nullable>
         <IsPackable>true</IsPackable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="MSTest" Version="3.1.1" />
-      <PackageReference Include="NUnit" Version="3.13.3" />
-      <PackageReference Include="xunit" Version="2.6.1" />
-    </ItemGroup>
-
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
         <PackageId>Awaitility.NET</PackageId>
-        <Version>1.0.0</Version>
-        <PackageDescription>Port of Awaitility from Java for NET world</PackageDescription>
+        <Version>1.0.1</Version>
+        <PackageDescription>Port of Awaitility from Java to NET world</PackageDescription>
         <RepositoryUrl>https://github.com/Constante-ou-Mort/Awaitility.NET</RepositoryUrl>
     </PropertyGroup>
 

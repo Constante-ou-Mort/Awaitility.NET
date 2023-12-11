@@ -1,7 +1,17 @@
+using System;
+using System.Linq;
+
 namespace Awaitility.ExecutorServices;
 
-public class SameThreadExecutorService(ConditionSettings conditionSettings) : BaseExecutorService(conditionSettings)
+public class SameThreadExecutorService : BaseExecutorService
 {
+    private readonly ConditionSettings _conditionSettings1;
+
+    public SameThreadExecutorService(ConditionSettings conditionSettings) : base(conditionSettings)
+    {
+        _conditionSettings1 = conditionSettings;
+    }
+
     public override void Until(Func<bool> predicate)
     {
         var duringConditionMet = false;
@@ -17,7 +27,7 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
         {
             try
             {
-                if (conditionSettings.FailFast != null && conditionSettings.FailFast())
+                if (_conditionSettings1.FailFast != null && _conditionSettings1.FailFast())
                 {
                     failFastCondition = true;
                     break;
@@ -25,7 +35,7 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
 
                 if (predicate())
                 {
-                    if (conditionSettings.During == TimeSpan.Zero) break;
+                    if (_conditionSettings1.During == TimeSpan.Zero) break;
 
                     if (isFirstSuccessPredicateExecution)
                     {
@@ -33,19 +43,19 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
                         isFirstSuccessPredicateExecution = false;
                     }
 
-                    if (DateTime.Now - duringStart >= conditionSettings.During)
+                    if (DateTime.Now - duringStart >= _conditionSettings1.During)
                     {
                         duringConditionMet = true;
                         break;
                     }
                 }
-                else if (conditionSettings.During != TimeSpan.Zero)
+                else if (_conditionSettings1.During != TimeSpan.Zero)
                     duringStart = DateTime.Now;
             }
             catch (Exception exception)
             {
-                if (!conditionSettings.IgnoreExceptions
-                    && !conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
+                if (!_conditionSettings1.IgnoreExceptions
+                    && !_conditionSettings1.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
                     throw;
             }
 
@@ -72,7 +82,7 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
         {
             try
             {
-                if (conditionSettings.FailFast != null && conditionSettings.FailFast())
+                if (_conditionSettings1.FailFast != null && _conditionSettings1.FailFast())
                 {
                     failFastCondition = true;
                     break;
@@ -80,7 +90,7 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
 
                 if (predicate(obj))
                 {
-                    if (conditionSettings.During == TimeSpan.Zero) break;
+                    if (_conditionSettings1.During == TimeSpan.Zero) break;
 
                     if (isFirstSuccessPredicateExecution)
                     {
@@ -88,19 +98,19 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
                         isFirstSuccessPredicateExecution = false;
                     }
 
-                    if (DateTime.Now - duringStart >= conditionSettings.During)
+                    if (DateTime.Now - duringStart >= _conditionSettings1.During)
                     {
                         duringConditionMet = true;
                         break;
                     }
                 }
-                else if (conditionSettings.During != TimeSpan.Zero)
+                else if (_conditionSettings1.During != TimeSpan.Zero)
                     duringStart = DateTime.Now;
             }
             catch (Exception exception)
             {
-                if (!conditionSettings.IgnoreExceptions
-                    && !conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
+                if (!_conditionSettings1.IgnoreExceptions
+                    && !_conditionSettings1.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
                     throw;
             }
 
@@ -124,11 +134,11 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
 
         var duringStart = DateTime.Now;
 
-        while (DateTime.Now - startTime <= conditionSettings.AtMost)
+        while (DateTime.Now - startTime <= _conditionSettings1.AtMost)
         {
             try
             {
-                if (conditionSettings.FailFast != null && conditionSettings.FailFast())
+                if (_conditionSettings1.FailFast != null && _conditionSettings1.FailFast())
                 {
                     failFastCondition = true;
                     break;
@@ -138,7 +148,7 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
 
                 if (predicate(value))
                 {
-                    if (conditionSettings.During == TimeSpan.Zero) break;
+                    if (_conditionSettings1.During == TimeSpan.Zero) break;
 
                     if (isFirstSuccessPredicateExecution)
                     {
@@ -146,21 +156,21 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
                         isFirstSuccessPredicateExecution = false;
                     }
 
-                    if (DateTime.Now - duringStart >= conditionSettings.During)
+                    if (DateTime.Now - duringStart >= _conditionSettings1.During)
                     {
                         duringConditionMet = true;
                         break;
                     }
                 }
-                else if (conditionSettings.During != TimeSpan.Zero)
+                else if (_conditionSettings1.During != TimeSpan.Zero)
                 {
                     duringStart = DateTime.Now;
                 }
             }
             catch (Exception exception)
             {
-                if (!conditionSettings.IgnoreExceptions
-                    && !conditionSettings.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
+                if (!_conditionSettings1.IgnoreExceptions
+                    && !_conditionSettings1.ExceptionTypes.Any(x => x.IsInstanceOfType(exception)))
                     throw;
             }
 
@@ -181,7 +191,7 @@ public class SameThreadExecutorService(ConditionSettings conditionSettings) : Ba
 
     private void CheckTimeoutConditions(DateTime startTime, bool duringConditionMet)
     {
-        if (DateTime.Now - startTime >= conditionSettings.AtMost)
+        if (DateTime.Now - startTime >= _conditionSettings1.AtMost)
         {
             CheckDuringMetCondition(duringConditionMet);
             ThrowTimeoutConditionException();

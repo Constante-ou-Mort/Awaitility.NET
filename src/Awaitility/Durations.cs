@@ -1,3 +1,5 @@
+using System;
+
 namespace Awaitility;
 
 public static class Durations

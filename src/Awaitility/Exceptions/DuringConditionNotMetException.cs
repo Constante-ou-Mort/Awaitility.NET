@@ -1,3 +1,5 @@
+using System;
+
 namespace Awaitility.Exceptions;
 
 public class DuringConditionNotMetException : Exception

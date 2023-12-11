@@ -1,3 +1,5 @@
+using System;
+
 namespace Awaitility.ExecutorServices;
 
 public interface IExecutorService

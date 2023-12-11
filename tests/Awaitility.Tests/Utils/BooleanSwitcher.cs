@@ -1,24 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
 namespace Awaitility.Tests.Utils;
 
-public class BooleanSwitcher(int howManyFalse = 0, int returnFalseOn = 0, TimeSpan timeout = default)
+public class BooleanSwitcher
 {
     private int _countFail;
     public int Count;
+    private readonly int _howManyFalse;
+    private readonly int _returnFalseOn;
+    private readonly TimeSpan _timeout;
+
+    public BooleanSwitcher(int howManyFalse = 0, int returnFalseOn = 0, TimeSpan timeout = default)
+    {
+        _howManyFalse = howManyFalse;
+        _returnFalseOn = returnFalseOn;
+        _timeout = timeout;
+    }
 
     public bool Switch(IEnumerable<string> enumerableOfStrings)
     {
         Count++;
         var result = true;
 
-        Thread.Sleep(timeout);
+        Thread.Sleep(_timeout);
 
-        if (_countFail < howManyFalse)
+        if (_countFail < _howManyFalse)
         {
             _countFail++;
             result = false;
         }
 
-        if (Count == returnFalseOn)
+        if (Count == _returnFalseOn)
         {
             result = false;
         }
@@ -27,21 +41,21 @@ public class BooleanSwitcher(int howManyFalse = 0, int returnFalseOn = 0, TimeSp
 
         return result;
     }
-    
+
     public bool Switch()
     {
         Count++;
         var result = true;
 
-        Thread.Sleep(timeout);
+        Thread.Sleep(_timeout);
 
-        if (_countFail < howManyFalse)
+        if (_countFail < _howManyFalse)
         {
             _countFail++;
             result = false;
         }
 
-        if (Count == returnFalseOn)
+        if (Count == _returnFalseOn)
         {
             result = false;
         }
